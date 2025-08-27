@@ -95,7 +95,48 @@
   let newNode = menu.cloneNode();
   console.log(newNode);
 
-  
+
+
+  const arr1 = [1,2,3]
+  const arr2 = [4,5,6]
+
+  console.log(...arr1,...arr2)
+
+
+  // spread operator
+  function getInfo(...c){
+    console.log(a,c);
+    return 'Hi'
+  }
+  console.log(getInfo((1,2,3,3,4,5,6,4,3)))
+
+  // map,filter,find,some,every,indexOF,findIndex
+  const personsArray = [
+    {
+      name:'person1',
+      age:'30',
+      country:'UK'
+    },
+    {
+      name:'person2',
+      age:'25',
+      country:'USA'
+    },
+    {
+      name:'person3',
+      age:'27',
+      country:'USA'
+    }
+  ];
+
+  let getAllNames = personsArray.map((singlePerson,index)=>{
+    console.log(singlePerson,index)
+    return singlePerson.name;
+  }
+)
+
+console.log(getAllNames);
+
 </script>  
 </body>
 </html>
