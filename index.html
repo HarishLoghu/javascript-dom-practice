@@ -137,6 +137,23 @@
 
 console.log(getAllNames);
 
+// map()
+const numbers = [1,2,3,4];
+const doubled = numbers.map(num => num*2);
+console.log(doubled);
+
+// filter()
+const even = numbers.filter(num => num % 2 === 0);
+console.log(even);
+
+// reduce()
+const sum = numbers.reduce((acc,curr)=> acc + curr,0);
+console.log(sum);
+
+const product = numbers.reduce((acc,curr) => acc * curr,1);
+// curr it will travese the array from the start till the end and acc will stores the value after each process
+ 
+
 </script>  
 </body>
 </html>
