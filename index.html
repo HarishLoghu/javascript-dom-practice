@@ -35,13 +35,16 @@
     </div>
 
   </div>
-
+ 
   <ul id="menu">
     <li>Home</li>
     <li>about</li>
     <li>blog</li>
     <li>project</li>
   </ul>
+
+  <div class="list-of-products"></div>
+
 
 <script src="">
   let msg1 = document.getElementById("message"); 
@@ -128,7 +131,7 @@
       country:'USA'
     }
   ];
-
+   
   let getAllNames = personsArray.map((singlePerson,index)=>{
     console.log(singlePerson,index)
     return singlePerson.name;
@@ -153,6 +156,38 @@ console.log(sum);
 const product = numbers.reduce((acc,curr) => acc * curr,1);
 // curr it will travese the array from the start till the end and acc will stores the value after each process
  
+const fruitsArray = ['apple','banana','orange'];
+
+console.log(fruitsArray.includes("grape"),fruitsArray.indexOf('banana'))
+
+console.log(getIndexOfPerson);
+
+
+let getListOfProducts = document.querySelector('.list-of-products');
+
+function renderProducts(getProducts){
+  getListOfProductsElement.innerHTML = getProducts.map(singleProductItem => `<p>${singleProductItem.title}</p>`
+
+  ).join(" ");
+}
+
+async function fetchListOfProducts(){
+  try{
+    const apiResponse = await fetch('https://dummyjson.com/products',{
+      method : 'GET'
+    })
+    const result = await apiResponse.json();
+    console.log(result);
+
+    if(result?.product?.length > 0) renderProducts(result?.products)
+  }catch(e){
+      console.log(e);
+  }
+}
+
+
+fetchListOfProducts()
+
 
 </script>  
 </body>
